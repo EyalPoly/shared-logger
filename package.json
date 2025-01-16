@@ -1,0 +1,42 @@
+{
+  "name": "shared-logger",
+  "version": "1.0.0",
+  "description": "A shared logging solution for Node.js microservices built on top of Winston",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EyalPoly/shared-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "logging",
+    "winston",
+    "backend.",
+    "moicroservices",
+    "monitoring",
+    "nodejs"
+  ],
+  "author": "Eyal Politansky",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/EyalPoly/shared-logger/issues"
+  },
+  "homepage": "https://github.com/your-org/shared-logger#readme",
+  "dependencies": {
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "jest": "^29.7.0"
+  }
+}

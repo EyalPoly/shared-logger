@@ -1,0 +1,7 @@
+tests/
+coverage/
+.github/
+.gitignore
+.env
+*.log
+.DS_Store
