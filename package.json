@@ -1,5 +1,5 @@
 {
-  "name": "shared-logger",
+  "name": "@eyal-poly/shared-logger",
   "version": "1.0.0",
   "description": "A shared logging solution for Node.js microservices built on top of Winston",
   "main": "src/index.js",
