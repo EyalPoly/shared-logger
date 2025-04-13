@@ -31,6 +31,9 @@
     "url": "https://github.com/EyalPoly/shared-logger/issues"
   },
   "homepage": "https://github.com/your-org/shared-logger#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"

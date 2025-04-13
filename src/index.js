@@ -37,16 +37,21 @@ class SharedLogger {
   }
 
   setupFormats() {
+    const errorFormatter = winston.format.printf(({ timestamp, level, message, stack, ...meta }) => {
+      const errorStack = stack || (meta?.error?.stack ?? "");
+      const errorMsg = meta?.error?.message ? ` | ${meta.error.message}` : "";
+      return `${timestamp} ${level}: ${message}${errorMsg}${errorStack ? `\n${errorStack}` : ""}`;
+    });
+
     this.fileFormat = winston.format.combine(
       winston.format.timestamp({
         format: "YYYY-MM-DD HH:mm:ss",
       }),
+      winston.format.errors({ stack: true }),
       winston.format.prettyPrint({
         depth: 5,
       }),
-      winston.format.printf(
-        (info) => `${info.timestamp} ${info.level}: ${info.message}`
-      )
+      errorFormatter
     );
 
     this.consoleFormat = winston.format.combine(
@@ -54,12 +59,11 @@ class SharedLogger {
       winston.format.timestamp({
         format: "YYYY-MM-DD HH:mm:ss",
       }),
+      winston.format.errors({ stack: true }),
       winston.format.prettyPrint({
         depth: 5,
       }),
-      winston.format.printf(
-        (info) => `${info.timestamp} ${info.level}: ${info.message}`
-      )
+      errorFormatter
     );
   }
 

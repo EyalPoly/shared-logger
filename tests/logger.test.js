@@ -16,6 +16,7 @@ jest.mock("winston", () => {
     prettyPrint: jest.fn(() => jest.fn()),
     printf: jest.fn((formatter) => formatter),
     colorize: jest.fn(),
+    errors: jest.fn(() => jest.fn()),
   };
 
   const transports = {
